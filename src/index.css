@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-zinc-950: var(--theme-zinc-950);
+  --color-zinc-900: var(--theme-zinc-900);
+  --color-zinc-800: var(--theme-zinc-800);
+  --color-zinc-500: var(--theme-zinc-500);
+  --color-zinc-400: var(--theme-zinc-400);
+  --color-zinc-300: var(--theme-zinc-300);
+  --color-zinc-100: var(--theme-zinc-100);
+  --color-black: var(--theme-black);
+  --color-white: var(--theme-white);
+  --color-emerald-500: var(--theme-emerald-500);
+  --color-blue-500: var(--theme-blue-500);
+  --color-red-500: var(--theme-red-500);
+}
+
+:root {
+  /* Default Dark Theme */
+  --theme-black: #000000;
+  --theme-white: #ffffff;
+  --theme-zinc-950: #09090b;
+  --theme-zinc-900: #18181b;
+  --theme-zinc-800: #27272a;
+  --theme-zinc-500: #71717a;
+  --theme-zinc-400: #a1a1aa;
+  --theme-zinc-300: #d4d4d8;
+  --theme-zinc-100: #f4f4f5;
+  --theme-emerald-500: #10b981;
+  --theme-blue-500: #3b82f6;
+  --theme-red-500: #ef4444;
+}
+
+[data-theme="light"] {
+  --theme-black: #f4f4f5;
+  --theme-white: #09090b;
+  --theme-zinc-950: #ffffff;
+  --theme-zinc-900: #e4e4e7;
+  --theme-zinc-800: #d4d4d8;
+  --theme-zinc-500: #71717a;
+  --theme-zinc-400: #52525b;
+  --theme-zinc-300: #3f3f46;
+  --theme-zinc-100: #18181b;
+  --theme-emerald-500: #059669;
+  --theme-blue-500: #2563eb;
+  --theme-red-500: #dc2626;
+}
+
+[data-theme="neon"] {
+  --theme-black: #050510;
+  --theme-white: #00ffcc;
+  --theme-zinc-950: #0a0a1a;
+  --theme-zinc-900: #10102a;
+  --theme-zinc-800: #1a1a3a;
+  --theme-zinc-500: #6a6aaa;
+  --theme-zinc-400: #8a8aca;
+  --theme-zinc-300: #aaaaea;
+  --theme-zinc-100: #eaeafa;
+  --theme-emerald-500: #00ffcc;
+  --theme-blue-500: #00ccff;
+  --theme-red-500: #ff00cc;
+}
+
+@layer base {
+  body {
+    @apply bg-black text-zinc-100 font-sans antialiased selection:bg-zinc-800 selection:text-white;
+  }
+}
+
+.glass-panel {
+  @apply bg-zinc-950/50 border border-zinc-800/50 rounded-xl backdrop-blur-xl;
+}
+
+.input-minimal {
+  @apply w-full bg-transparent border-b border-zinc-800 py-2 text-zinc-100 focus:border-zinc-400 focus:outline-none transition-colors font-mono text-sm placeholder:text-zinc-700;
+}
+
+.btn-minimal {
+  @apply px-4 py-2 rounded-lg border border-zinc-800 hover:bg-zinc-900 transition-colors text-sm font-medium flex items-center justify-center gap-2 text-zinc-300 hover:text-white;
+}
+
+.btn-primary {
+  @apply px-4 py-2 rounded-lg bg-zinc-100 text-black hover:bg-white transition-colors text-sm font-medium flex items-center justify-center gap-2;
+}
+
+.label-micro {
+  @apply text-[10px] uppercase tracking-widest text-zinc-500 font-medium mb-1 block;
+}
